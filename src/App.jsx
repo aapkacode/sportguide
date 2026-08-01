@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Menu,
   X,
@@ -23,6 +23,9 @@ import {
   FaYoutube,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { Assest } from "./assets/Assest";
+
+
 
 /* =========================================================
    DATA
@@ -30,7 +33,7 @@ import {
 
 const achievements = [
   {
-    number: 7,
+    number: 3,
     suffix: "+",
     title: "Years",
     text: "Professional Journey",
@@ -90,8 +93,8 @@ const talents = [
     color: "gold",
   },
   {
-    icon: "💃",
-    title: "Dance",
+    icon: "🎶",
+    title: "Music",
     text: "Creative Expression",
     color: "purple",
   },
@@ -120,8 +123,8 @@ const gallery = [
     color: "blue",
   },
   {
-    title: "Dance",
-    icon: "💃",
+    title: "Music",
+    icon: "🎶",
     color: "purple",
   },
   {
@@ -131,7 +134,7 @@ const gallery = [
   },
   {
     title: "Sports",
-    icon: "⚽",
+    icon: "🏏",
     color: "red",
   },
   {
@@ -169,16 +172,20 @@ const videos = [
     title: "Live Performance Highlights",
     thumbnail:
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80",
+       video:"https://www.youtube.com/watch?v=CELK5-vm5T0"
   },
   {
     title: "Karate Championship",
     thumbnail:
       "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=900&q=80",
+       video:"https://www.youtube.com/watch?v=CELK5-vm5T0"
   },
   {
     title: "Special Performance",
     thumbnail:
       "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=80",
+      
+      video:"https://www.youtube.com/watch?v=CELK5-vm5T0"
   },
 ];
 
@@ -239,8 +246,8 @@ function Navbar() {
           <div className="logo-icon">T</div>
 
           <div>
-            <strong>SPORT</strong>
-            <small>GUIDE</small>
+            <strong> Trishant </strong>
+            <strong>Priyavrat</strong>
           </div>
         </a>
 
@@ -280,10 +287,19 @@ function Navbar() {
    SECTION TITLE
 ========================================================= */
 
+// function SectionTitle({ eyebrow, title, text }) {
+//   return (
+//     <div className="section-title reveal">
+//       <span className="eyebrow">{eyebrow}</span>
+//       <h2>{title}</h2>
+//       <p>{text}</p>
+//     </div>
+//   );
+// }
 function SectionTitle({ eyebrow, title, text }) {
   return (
-    <div className="section-title reveal">
-      <span className="eyebrow">{eyebrow}</span>
+    <div className="section-title">
+      <span>{eyebrow}</span>
       <h2>{title}</h2>
       <p>{text}</p>
     </div>
@@ -307,8 +323,9 @@ function Hero() {
           </span>
 
           <h1>
-            SPORT
-            <span>GUIDE</span>
+            Trishant
+            &nbsp;
+            <small>Priyavrat</small>
           </h1>
 
           <p className="hero-subtitle">
@@ -341,7 +358,7 @@ function Hero() {
 
           <div className="hero-stats">
             <div>
-              <strong>7+</strong>
+              <strong>3+</strong>
               <span>Years</span>
             </div>
 
@@ -369,8 +386,12 @@ function Hero() {
           <div className="profile-card">
             <div className="profile-image">
               <div className="profile-placeholder">
-                <span>ADD PHOTO</span>
-                <small>Your Photo Here</small>
+                {/* <span>ADD PHOTO</span>
+                <small>Your Photo Here</small> */}
+             
+
+<img src={Assest.Child1} alt="Logo" />
+                  {/* <img    loading="lazy" src={"../Assets/Child1.jpeg"} alt="Logo" className="header-logo" /> */}
               </div>
             </div>
 
@@ -456,7 +477,10 @@ function RecordsVault() {
             </p>
 
             <div className="record-photo">
-              <span>GWR Photo Here</span>
+              {/* <span>GWR Photo Here</span> */}
+              <img src={Assest.Child8} style={{
+                height:"280px", width:"550px"
+              }} alt="Logo" />
             </div>
 
             <div className="record-footer">
@@ -544,7 +568,10 @@ function KarateArena() {
               </div>
 
               <div className="karate-photo">
-                <span>Karate Photo Here</span>
+                {/* <span>Karate Photo Here</span> */}
+                   <img src={Assest.Child9} style={{
+                height:"230px", width:"550px"
+              }} alt="Logo" />
               </div>
 
               <div className="karate-small-stats">
@@ -828,25 +855,50 @@ function Testimonials() {
 ========================================================= */
 
 function Contact() {
+  // const [submitted, setSubmitted] = useState(false);
+
+   const form = useRef();
   const [submitted, setSubmitted] = useState(false);
 
   const submitForm = (e) => {
     e.preventDefault();
-    setSubmitted(true);
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 4000);
+    emailjs.sendForm(
+        "service_wose6w4",
+      "template_i5zc66h",
+      form.current,
+      "jy7IpLSmgw6mapH3D"
+      )
+      .then(
+        () => {
+          setSubmitted(true);
+          form.current.reset();
+
+          setTimeout(() => {
+            setSubmitted(false);
+          }, 4000);
+        },
+        (error) => {
+          console.error(error);
+          alert("Failed to send message.");
+        }
+      );
   };
 
   return (
     <section id="contact" className="section contact-section">
       <div className="container">
-        <SectionTitle
+        {/* <SectionTitle
           eyebrow="📩 GET IN TOUCH"
           title="Media & Inquiries"
           text="For collaborations, media opportunities, events and general inquiries."
-        />
+        /> */}
+        <SectionTitle
+  eyebrow="📩 GET IN TOUCH"
+  title="Media & Inquiries"
+  text="For collaborations, media opportunities, events and general inquiries."
+  className="contact-main-title"
+/>
 
         <div className="contact-grid">
           <div className="contact-info">
@@ -857,7 +909,7 @@ function Contact() {
 
               <div>
                 <span>Location</span>
-                <strong>India</strong>
+                <strong>Varanasi (Kashi), Uttar Pradesh, India</strong>
               </div>
             </div>
 
@@ -868,7 +920,7 @@ function Contact() {
 
               <div>
                 <span>Email</span>
-                <strong>hello@example.com</strong>
+                <strong>priyavrattrishant04@gmail.com</strong>
               </div>
             </div>
 
@@ -879,80 +931,89 @@ function Contact() {
 
               <div>
                 <span>Phone</span>
-                <strong>+91 XXXXX XXXXX</strong>
+                <strong>+91 77640 40121</strong>
               </div>
             </div>
 
            <div className="social-links">
-  <a href="#" aria-label="Instagram">
+  <a href="https://www.instagram.com/trishantpriyavratofficial01?igsh=MWJiNnVoeGJrcGQ5Mw==" aria-label="Instagram">
     IG
   </a>
 
-  <a href="#" aria-label="Facebook">
+  <a href="https://www.facebook.com/share/1BoHMHPdGm/" aria-label="Facebook">
     FB
   </a>
 
-  <a href="#" aria-label="YouTube">
+  <a href="https://youtube.com/@trishantpriyavratofficial?si=DuAjFLIVXZJRmF-D" aria-label="YouTube">
     YT
   </a>
 
-  <a href="#" aria-label="LinkedIn">
+  {/* <a href="#" aria-label="LinkedIn">
     IN
-  </a>
+  </a> */}
 </div>
           </div>
 
-          <form
-            className="contact-form glass-card reveal"
-            onSubmit={submitForm}
-          >
-            <div className="form-row">
-              <input
-                type="text"
-                placeholder="Your Name"
-                required
-              />
+         <form
+      ref={form}
+      className="contact-form glass-card reveal"
+      onSubmit={submitForm}
+    >
+      <div className="form-row">
+        <input
+          type="text"
+          name="user_name"
+          placeholder="Your Name"
+          required
+        />
 
-              <input
-                type="email"
-                placeholder="Email Address"
-                required
-              />
-            </div>
+        <input
+          type="email"
+          name="user_email"
+          placeholder="Email Address"
+          required
+        />
+      </div>
 
-            <div className="form-row">
-              <input
-                type="text"
-                placeholder="Phone Number"
-              />
+      <div className="form-row">
+        <input
+          type="text"
+          name="user_phone"
+          placeholder="Phone Number"
+        />
 
-              <select defaultValue="">
-                <option value="" disabled>
-                  Select Inquiry
-                </option>
-                <option>Media</option>
-                <option>Collaboration</option>
-                <option>Event</option>
-                <option>General</option>
-              </select>
-            </div>
+        <select
+          name="inquiry"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Select Inquiry
+          </option>
+          <option value="Media">Media</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Event">Event</option>
+          <option value="General">General</option>
+        </select>
+      </div>
 
-            <input
-              type="text"
-              placeholder="Subject"
-            />
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+      />
 
-            <textarea
-              rows="5"
-              placeholder="Write your message..."
-              required
-            ></textarea>
+      <textarea
+        rows="5"
+        name="message"
+        placeholder="Write your message..."
+        required
+      ></textarea>
 
-            <button className="btn btn-gold submit-btn">
-              <Send size={16} />
-              {submitted ? "Message Sent!" : "Send Inquiry"}
-            </button>
-          </form>
+      <button className="btn btn-gold submit-btn" type="submit">
+        <Send size={16} />
+        {submitted ? "Message Sent!" : "Send Inquiry"}
+      </button>
+    </form>
         </div>
       </div>
     </section>
@@ -972,8 +1033,8 @@ function Footer() {
             <div className="logo-icon">T</div>
 
             <div>
-              <strong>SPORT</strong>
-              <small>GUIDE</small>
+             <strong> Trishant </strong>
+            <small>Priyavrat</small>
             </div>
           </a>
 
@@ -995,25 +1056,33 @@ function Footer() {
         <div className="footer-column">
           <h4>Contact</h4>
 
-          <span>India</span>
-          <span>hello@example.com</span>
-          <span>+91 XXXXX XXXXX</span>
+          <span>Varanasi (Kashi), Uttar Pradesh, India</span>
+          <span>priyavrattrishant04@gmail.com</span>
+          <span>+91 77640 40121</span>
         </div>
 
         <div className="footer-column">
           <h4>Follow Me</h4>
 
          <div className="footer-social">
-  <a href="#" aria-label="Instagram">IG</a>
-  <a href="#" aria-label="Facebook">FB</a>
-  <a href="#" aria-label="YouTube">YT</a>
+  <a href="https://www.instagram.com/trishantpriyavratofficial01?igsh=MWJiNnVoeGJrcGQ5Mw==" aria-label="Instagram">
+    IG
+  </a>
+
+  <a href="https://www.facebook.com/share/1BoHMHPdGm/" aria-label="Facebook">
+    FB
+  </a>
+
+  <a href="https://youtube.com/@trishantpriyavratofficial?si=DuAjFLIVXZJRmF-D" aria-label="YouTube">
+    YT
+  </a>
 </div>
         </div>
       </div>
 
       <div className="footer-bottom container">
         <span>
-          © {new Date().getFullYear()} SPORT GUIDE.
+          © {new Date().getFullYear()} Trishant Priyavrat.
           All Rights Reserved.
         </span>
 
@@ -1030,7 +1099,7 @@ function Footer() {
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/910000000000"
+      href="https://wa.me/917764040121"
       target="_blank"
       rel="noreferrer"
       className="whatsapp"
@@ -1069,7 +1138,7 @@ function App() {
 
   useEffect(() => {
     document.title =
-      "SPORT GUIDE | Talent, Arts, Karate & Achievements";
+      "Trishant Priyavrat | Talent, Arts, Karate & Achievements";
   }, []);
 
   return (

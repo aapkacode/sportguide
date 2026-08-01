@@ -2231,3 +2231,16 @@ img {
     transform: none;
   }
 }
+.contact-main-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .contact-main-title {
+    font-size: 42px;
+    white-space: normal;
+  }
+}
