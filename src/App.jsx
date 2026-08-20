@@ -169,23 +169,16 @@ const testimonials = [
 
 const videos = [
   {
-    title: "Live Performance Highlights",
-    thumbnail:
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80",
-       video:"https://www.youtube.com/watch?v=CELK5-vm5T0"
-  },
-  {
     title: "Karate Championship",
-    thumbnail:
-      "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=900&q=80",
-       video:"https://www.youtube.com/watch?v=CELK5-vm5T0"
+    url: "https://www.youtube.com/embed/MSu95dL80cQ",
   },
   {
-    title: "Special Performance",
-    thumbnail:
-      "https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=80",
-      
-      video:"https://www.youtube.com/watch?v=CELK5-vm5T0"
+    title: "Martial Arts Performance",
+    url: "https://www.youtube.com/embed/Iih4JaZc3Ig",
+  },
+  {
+    title: "Martial Arts Performances",
+    url: "https://www.youtube.com/embed/CELK5-vm5T0",
   },
 ];
 
@@ -656,7 +649,48 @@ function KarateArena() {
     </section>
   );
 }
+function KarateGallery() {
+  const galleryImages = [
+    Assest.Child1,
+    Assest.Child2,
+    Assest.Child3,
+    Assest.Child4,
+    Assest.Child5,
+    Assest.Child6,
+    Assest.Child9,
+    Assest.Child8,
+  ];
 
+  return (
+    <section id="karate-gallery" className="section karate-gallery-section">
+      <div className="container">
+        {/* <SectionTitle
+          eyebrow="🥋 KARATE GALLERY"
+          title="Moments of Discipline & Achievement"
+          text="A collection of memorable moments from the martial arts journey."
+        /> */}
+
+        <div className="karate-gallery-grid">
+          {galleryImages.map((image, index) => (
+            <div className="karate-gallery-card glass-card" key={index}>
+              <div className="karate-gallery-image">
+                <img
+                  src={image}
+                  alt={`Karate moment ${index + 1}`}
+                />
+              </div>
+
+              <div className="karate-gallery-overlay">
+                <span>🥋</span>
+                <strong>Karate Journey</strong>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 /* =========================================================
    TALENTS
 ========================================================= */
@@ -695,7 +729,7 @@ function TalentsArts() {
           <span>🎨</span>
           <h3>Moments Gallery</h3>
         </div>
-
+        
         <div className="gallery-grid">
           {gallery.map((item, index) => (
             <div
@@ -714,6 +748,8 @@ function TalentsArts() {
             </div>
           ))}
         </div>
+        <KarateGallery />
+
       </div>
     </section>
   );
@@ -767,32 +803,22 @@ function MediaSection() {
           <h3>Watch On YouTube</h3>
         </div>
 
-        <div className="video-grid">
-          {videos.map((video, index) => (
-            <a
-              className="video-card reveal"
-              href="#"
-              key={index}
-            >
-              <img
-                src={video.thumbnail}
-                alt={video.title}
-                loading="lazy"
-              />
+   <div className="video-grid">
+  {videos.map((video, index) => (
+    <div className="video-card reveal" key={index}>
+      <iframe
+        src={video.url}
+        title={video.title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
 
-              <div className="video-overlay">
-                <div className="play-button">
-                  <Play fill="currentColor" size={20} />
-                </div>
-              </div>
-
-              <div className="video-title">
-                <span>{video.title}</span>
-                <ExternalLink size={14} />
-              </div>
-            </a>
-          ))}
-        </div>
+      <div className="video-title">
+        <span>{video.title}</span>
+      </div>
+    </div>
+  ))}
+</div>
 
         {/* <div className="youtube-button-wrap">
           <a href="#" className="btn btn-gold">
@@ -1153,6 +1179,7 @@ function App() {
         <RecordsVault />
 
         <KarateArena />
+        
 
         <TalentsArts />
 

@@ -2244,3 +2244,66 @@ img {
     white-space: normal;
   }
 }
+.karate-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.karate-gallery-card {
+  overflow: hidden;
+  padding: 0;
+  border-radius: 18px;
+}
+
+.karate-gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: fill;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.karate-gallery-card:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 992px) {
+  .karate-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .karate-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.video-card {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 230px;
+  border: 0;
+  display: block;
+}
+
+.video-title {
+  padding: 12px 15px;
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
