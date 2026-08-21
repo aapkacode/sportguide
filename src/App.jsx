@@ -652,46 +652,76 @@ function KarateArena() {
 }
 function KarateGallery() {
   const galleryImages = [
-    Assest.Child1,
-    Assest.Child2,
-    Assest.Child3,
-    Assest.Child4,
-    Assest.Child5,
-    Assest.Child6,
-    Assest.Child10,
-    Assest.Child8,
+    {
+      image: Assest.Child1,
+      title: "India Book of Records",
+    },
+    {
+      image: Assest.Child2,
+      title: "Karate Achievement Award",
+    },
+    {
+      image: Assest.Child3,
+      title: "international Book of record ",
+    },
+    {
+      image: Assest.Child4,
+      title: "Trishant Priyavrat Sho-Dam ",
+    },
+    {
+      image: Assest.Child5,
+      title: "Best Karate Boy's Players & Discipline Awards 2026 ",
+    },
+    {
+      image: Assest.Child6,
+      title: "Award",
+    },
+    {
+      image: Assest.Child10,
+      title: "Karate Achievement",
+    },
+    {
+      image: Assest.Child8,
+      title: "Award",
+    },
   ];
 
   return (
-    <section id="karate-gallery" className="section karate-gallery-section">
+    <section
+      id="karate-gallery"
+      className="section karate-gallery-section"
+    >
       <div className="container">
-        {/* <SectionTitle
-          eyebrow="🥋 KARATE GALLERY"
-          title="Moments of Discipline & Achievement"
-          text="A collection of memorable moments from the martial arts journey."
-        /> */}
 
         <div className="karate-gallery-grid">
-          {galleryImages.map((image, index) => (
-            <div className="karate-gallery-card glass-card" key={index}>
+          {galleryImages.map((item, index) => (
+            <div
+              className="karate-gallery-card glass-card"
+              key={index}
+            >
               <div className="karate-gallery-image">
                 <img
-                  src={image}
-                  alt={`Karate moment ${index + 1}`}
+                  src={item.image}
+                  alt={item.title}
                 />
               </div>
 
               <div className="karate-gallery-overlay">
                 <span>🥋</span>
-                <strong>Karate Journey</strong>
+                <strong>{item.title}</strong>
               </div>
+
+              {/* Bottom Title */}
+              
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
 }
+
 /* =========================================================
    TALENTS
 ========================================================= */

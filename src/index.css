@@ -2308,3 +2308,24 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+
+.karate-gallery-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+}
+
+.karate-gallery-title span {
+  font-size: 13px;
+}
+
+.karate-gallery-title h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #d4af37;
+}
