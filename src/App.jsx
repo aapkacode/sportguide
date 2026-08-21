@@ -15,11 +15,12 @@ import {
   ExternalLink,
   ChevronRight,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 // Social icons
 import {
-  FaFacebookF,
   FaInstagram,
+  FaFacebookF,
   FaYoutube,
   FaLinkedinIn,
 } from "react-icons/fa";
@@ -657,7 +658,7 @@ function KarateGallery() {
     Assest.Child4,
     Assest.Child5,
     Assest.Child6,
-    Assest.Child9,
+    Assest.Child10,
     Assest.Child8,
   ];
 
@@ -884,32 +885,40 @@ function Contact() {
   // const [submitted, setSubmitted] = useState(false);
 
    const form = useRef();
-  const [submitted, setSubmitted] = useState(false);
-
-  const submitForm = (e) => {
+  
+const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+const submitForm = async (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-        "service_wose6w4",
-      "template_i5zc66h",
-      form.current,
-      "jy7IpLSmgw6mapH3D"
-      )
-      .then(
-        () => {
-          setSubmitted(true);
-          form.current.reset();
+    setSending(true);
 
-          setTimeout(() => {
-            setSubmitted(false);
-          }, 4000);
-        },
-        (error) => {
-          console.error(error);
-          alert("Failed to send message.");
-        }
-      );
+    try {
+      const result = await emailjs.sendForm(
+        "service_oqacroj", // IMPORTANT: EmailJS Dashboard ka exact Service ID
+        "template_i5zc66h", // IMPORTANT: EmailJS Dashboard ka exact Template ID
+        form.current,
+        "zdVVt3m9pzuUkp2ij"
+      ).then(() => {
+      alert("Message sent successfully ✅");
+      e.target.reset();
+          setSubmitted(true);
+      
+    })
+    .catch((err) => {
+      alert("Failed to send message ❌");
+      console.error(err);
+    });
+  }
+
+    
+
+     
+     finally {
+      setSending(false);
+    }
   };
+
 
   return (
     <section id="contact" className="section contact-section">
@@ -963,15 +972,15 @@ function Contact() {
 
            <div className="social-links">
   <a href="https://www.instagram.com/trishantpriyavratofficial01?igsh=MWJiNnVoeGJrcGQ5Mw==" aria-label="Instagram">
-    IG
+                          <FaInstagram />
   </a>
 
   <a href="https://www.facebook.com/share/1BoHMHPdGm/" aria-label="Facebook">
-    FB
+     <FaFacebookF />
   </a>
 
-  <a href="https://youtube.com/@trishantpriyavratofficial?si=DuAjFLIVXZJRmF-D" aria-label="YouTube">
-    YT
+  <a href="https://www.youtube.com/@trishantpriyavrat" aria-label="YouTube">
+     <FaYoutube />
   </a>
 
   {/* <a href="#" aria-label="LinkedIn">
@@ -1092,15 +1101,15 @@ function Footer() {
 
          <div className="footer-social">
   <a href="https://www.instagram.com/trishantpriyavratofficial01?igsh=MWJiNnVoeGJrcGQ5Mw==" aria-label="Instagram">
-    IG
+                          <FaInstagram />
   </a>
 
   <a href="https://www.facebook.com/share/1BoHMHPdGm/" aria-label="Facebook">
-    FB
+     <FaFacebookF />
   </a>
 
   <a href="https://youtube.com/@trishantpriyavratofficial?si=DuAjFLIVXZJRmF-D" aria-label="YouTube">
-    YT
+     <FaYoutube />
   </a>
 </div>
         </div>

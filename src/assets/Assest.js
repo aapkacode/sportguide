@@ -7,7 +7,7 @@ import Child6 from "../assets/Child6.jpeg";
 // import Child7 from "../assets/Child7.jpeg";
 import Child8 from "../assets/Child8.jpeg";
 import Child9 from "../assets/Child9.png";
-
+import Child10 from "../assets/Child10.jpeg";
 export const Assest = {
   Child1,
   Child2,
@@ -18,4 +18,5 @@ export const Assest = {
   // Child7,
   Child8,
   Child9,
+  Child10
 };
