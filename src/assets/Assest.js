@@ -8,6 +8,20 @@ import Child6 from "../assets/Child6.jpeg";
 import Child8 from "../assets/Child8.jpeg";
 import Child9 from "../assets/Child9.png";
 import Child10 from "../assets/Child10.jpeg";
+import chamta from "../assets/chamta.png"
+import Cricket from "../assets/cricket1.jpg"
+import Cricket2 from "../assets/cricket2.jpg"
+import Cricket3 from "../assets/cricket3.jpg"
+import Harmuniya from "../assets/harmuniya1.jpg"
+import Indiabook2 from "../assets/indiaBook2.jpg"
+import Indiabook3 from "../assets/indiaBook3.jpg"
+import piono from "../assets/piono.jpg"
+import tabla1 from "../assets/tabla2.jpg"
+import tabla2 from "../assets/tabla1.png"
+import podcost from "../assets/PODCOST.mp4"
+import video1 from "../assets/VIDEO1.mp4"
+import video2 from "../assets/VIDEO1.mp4"
+
 export const Assest = {
   Child1,
   Child2,
@@ -18,5 +32,21 @@ export const Assest = {
   // Child7,
   Child8,
   Child9,
-  Child10
+  Child10,
+  chamta,
+   Cricket ,
+    Cricket2 ,
+     Cricket3 ,
+     Harmuniya,
+  Indiabook2,
+  Indiabook3,
+  piono ,
+   tabla2,
+    tabla1,
+    video1,
+    video2,
+    podcost
+
+
+
 };

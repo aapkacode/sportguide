@@ -25,6 +25,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { Assest } from "./assets/Assest";
+import Podcast from "./Prodcost";
 
 
 
@@ -107,49 +108,193 @@ const talents = [
   },
 ];
 
+
+
+
 const gallery = [
   {
     title: "Keyboard",
     icon: "🎹",
     color: "blue",
+    images: [Assest.piono],
   },
+
   {
     title: "Tabla",
     icon: "🥁",
     color: "purple",
+    images: [
+      Assest.tabla1,
+      Assest.tabla2,
+    ],
   },
+
   {
     title: "Karate",
     icon: "🥋",
     color: "blue",
+    images: [
+      Assest.Child1,
+      Assest.Child2,
+      Assest.Child3,
+      Assest.Child4,
+      Assest.Child5,
+      Assest.Child6,
+      Assest.Child8,
+      Assest.Child9,
+      Assest.Child10,
+    ],
   },
+
   {
     title: "Music",
     icon: "🎶",
     color: "purple",
+    images: [
+      Assest.Harmuniya,
+    ],
   },
+
   {
     title: "Award",
     icon: "🏆",
     color: "green",
+    images: [
+      Assest.Child2,
+      Assest.Child5,
+      Assest.Child6,
+      Assest.Child8,
+      Assest.Child10,
+    ],
   },
+
   {
     title: "Sports",
     icon: "🏏",
     color: "red",
+    images: [
+      Assest.Cricket,
+      Assest.Cricket2,
+      Assest.Cricket3,
+    ],
   },
+
   {
     title: "IBR",
     icon: "📜",
     color: "blue",
+    images: [
+      Assest.Indiabook2,
+      Assest.Indiabook3,
+    ],
   },
+
   {
     title: "GWR",
     icon: "🏅",
     color: "gold",
+    images: [
+      Assest.Child3,
+      Assest.Indiabook2,
+      Assest.Indiabook3,
+    ],
   },
 ];
+// const gallery = [
+//   {
+//     title: "Keyboard",
+//     icon: "🎹",
+//     color: "blue",
+//   },
+//   {
+//     title: "Tabla",
+//     icon: "🥁",
+//     color: "purple",
+//   },
+//   {
+//     title: "Karate",
+//     icon: "🥋",
+//     color: "blue",
+//   },
+//   {
+//     title: "Music",
+//     icon: "🎶",
+//     color: "purple",
+//   },
+//   {
+//     title: "Award",
+//     icon: "🏆",
+//     color: "green",
+//   },
+//   {
+//     title: "Sports",
+//     icon: "🏏",
+//     color: "red",
+//   },
+//   {
+//     title: "IBR",
+//     icon: "📜",
+//     color: "blue",
+//   },
+//   {
+//     title: "GWR",
+//     icon: "🏅",
+//     color: "gold",
+//   },
+// ];
 
+
+
+// const gallery = [
+//   {
+//     title: "Keyboard",
+//     icon: "🎹",
+//     color: "blue",
+//     target: "keyboard-gallery",
+//   },
+//   {
+//     title: "Tabla",
+//     icon: "🥁",
+//     color: "purple",
+//     target: "tabla-gallery",
+//   },
+//   {
+//     title: "Karate",
+//     icon: "🥋",
+//     color: "blue",
+//     target: "karate-gallery",
+//   },
+//   {
+//     title: "Music",
+//     icon: "🎶",
+//     color: "purple",
+//     target: "music-gallery",
+//   },
+//   {
+//     title: "Award",
+//     icon: "🏆",
+//     color: "green",
+//     target: "award-gallery",
+//   },
+//   {
+//     title: "Sports",
+//     icon: "🏏",
+//     color: "red",
+//     target: "sports-gallery",
+//   },
+//   {
+//     title: "IBR",
+//     icon: "📜",
+//     color: "blue",
+//     target: "ibr-gallery",
+//   },
+//   {
+//     title: "GWR",
+//     icon: "🏅",
+//     color: "gold",
+//     target: "gwr-gallery",
+//   },
+// ];
 const testimonials = [
   {
     name: "Performance Community",
@@ -228,6 +373,7 @@ function Navbar() {
     ["Home", "#home"],
     ["Records", "#records"],
     ["Karate", "#karate"],
+     ["Podcast", "#podcast"],
     ["Talents", "#talents"],
     ["Gallery", "#gallery"],
     ["Media", "#media"],
@@ -726,10 +872,112 @@ function KarateGallery() {
    TALENTS
 ========================================================= */
 
+// function TalentsArts() {
+//   const handleGalleryClick = (target) => {
+//   const element = document.getElementById(target);
+
+//   if (element) {
+//     element.scrollIntoView({
+//       behavior: "smooth",
+//       block: "start",
+//     });
+//   }
+// };
+//   return (
+//     <section id="talents" className="section talents-section">
+//       <div className="container">
+//         <SectionTitle
+//           eyebrow="🎨 CREATIVITY & PASSION"
+//           title="Talents & Arts"
+//           text="Exploring different forms of creativity, performance and artistic expression."
+//         />
+
+//         <div className="talent-grid">
+//           {talents.map((item, index) => (
+//             <div
+//               className={`talent-card ${item.color} reveal`}
+//               key={index}
+//             >
+//               <div className="talent-icon">{item.icon}</div>
+
+//               <h3>{item.title}</h3>
+
+//               <p>{item.text}</p>
+
+//               <button>
+//                 Explore
+//                 <ArrowRight size={14} />
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+
+//         <div id="gallery" className="gallery-heading reveal">
+//           <span>🎨</span>
+//           <h3>Moments Gallery</h3>
+//         </div>
+        
+//         <div className="gallery-grid">
+//           {gallery.map((item, index) => (
+//   <div
+//     className={`gallery-card ${item.color} reveal`}
+//     key={index}
+//     onClick={() => handleGalleryClick(item.target)}
+//     role="button"
+//     tabIndex={0}
+//   >
+//     <div className="gallery-icon">
+//       {item.icon}
+//     </div>
+
+//     <h3>{item.title}</h3>
+
+//     <span>
+//       View Moments
+//       <ArrowRight size={13} />
+//     </span>
+//   </div>
+// ))}
+//         </div>
+//         <KarateGallery />
+
+//       </div>
+//     </section>
+//   );
+// }
+
+
 function TalentsArts() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleGalleryClick = (item) => {
+    setSelectedCategory(item);
+    setSelectedImage(null);
+
+    setTimeout(() => {
+      document
+        .getElementById("related-gallery")
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+    }, 100);
+  };
+
+  const closeGallery = () => {
+    setSelectedCategory(null);
+    setSelectedImage(null);
+  };
+
   return (
     <section id="talents" className="section talents-section">
       <div className="container">
+
+        {/* =========================
+            TALENTS
+        ========================= */}
+
         <SectionTitle
           eyebrow="🎨 CREATIVITY & PASSION"
           title="Talents & Arts"
@@ -742,7 +990,9 @@ function TalentsArts() {
               className={`talent-card ${item.color} reveal`}
               key={index}
             >
-              <div className="talent-icon">{item.icon}</div>
+              <div className="talent-icon">
+                {item.icon}
+              </div>
 
               <h3>{item.title}</h3>
 
@@ -756,17 +1006,38 @@ function TalentsArts() {
           ))}
         </div>
 
-        <div id="gallery" className="gallery-heading reveal">
+
+        {/* =========================
+            MOMENTS GALLERY
+        ========================= */}
+
+        <div
+          id="gallery"
+          className="gallery-heading reveal"
+        >
           <span>🎨</span>
+
           <h3>Moments Gallery</h3>
+
+          <p>
+            Click any category to explore related moments.
+          </p>
         </div>
-        
+
+
         <div className="gallery-grid">
+
           {gallery.map((item, index) => (
             <div
-              className={`gallery-card ${item.color} reveal`}
+              className={`gallery-card ${item.color} reveal ${
+                selectedCategory?.title === item.title
+                  ? "gallery-active"
+                  : ""
+              }`}
               key={index}
+              onClick={() => handleGalleryClick(item)}
             >
+
               <div className="gallery-icon">
                 {item.icon}
               </div>
@@ -774,17 +1045,217 @@ function TalentsArts() {
               <h3>{item.title}</h3>
 
               <span>
-                View Moments <ArrowRight size={13} />
+                View Moments
+                <ArrowRight size={13} />
               </span>
+
             </div>
           ))}
+
         </div>
-        <KarateGallery />
+
+
+        {/* =========================
+            RELATED GALLERY
+        ========================= */}
+
+        {selectedCategory && (
+          <div
+            id="related-gallery"
+            className="related-gallery"
+          >
+
+            {/* HEADER */}
+
+            <div className="related-gallery-header">
+
+              <div>
+
+                <div className="related-title">
+
+                  <span>
+                    {selectedCategory.icon}
+                  </span>
+
+                  <h3>
+                    {selectedCategory.title}
+                  </h3>
+
+                </div>
+
+                <p>
+                  Related {selectedCategory.title} moments
+                </p>
+
+              </div>
+
+
+              <button
+                type="button"
+                className="related-close"
+                onClick={closeGallery}
+              >
+                <X size={20} />
+              </button>
+
+            </div>
+
+
+            {/* =========================
+                RELATED IMAGES
+            ========================= */}
+
+            <div className="related-gallery-grid">
+
+              {selectedCategory.images.map(
+                (image, index) => (
+
+                  <div
+                    className="related-gallery-card"
+                    key={index}
+                    onClick={() =>
+                      setSelectedImage(index)
+                    }
+                  >
+
+                    <img
+                      src={image}
+                      alt={`${selectedCategory.title} moment ${
+                        index + 1
+                      }`}
+                      loading="lazy"
+                    />
+
+                    <div className="related-image-overlay">
+
+                      <span>
+                        🔍
+                      </span>
+
+                      <strong>
+                        View Image
+                      </strong>
+
+                    </div>
+
+                  </div>
+
+                )
+              )}
+
+            </div>
+
+          </div>
+        )}
+
+
+        {/* =========================
+            FULL SCREEN IMAGE
+        ========================= */}
+
+        {selectedImage !== null &&
+          selectedCategory && (
+
+            <div
+              className="image-lightbox"
+              onClick={() =>
+                setSelectedImage(null)
+              }
+            >
+
+              {/* CLOSE */}
+
+              <button
+                type="button"
+                className="lightbox-close"
+                onClick={() =>
+                  setSelectedImage(null)
+                }
+              >
+                <X size={28} />
+              </button>
+
+
+              {/* PREVIOUS */}
+
+              <button
+                type="button"
+                className="lightbox-prev"
+                onClick={(e) => {
+
+                  e.stopPropagation();
+
+                  setSelectedImage((prev) =>
+                    prev === 0
+                      ? selectedCategory.images.length - 1
+                      : prev - 1
+                  );
+
+                }}
+              >
+                <ChevronLeft size={30} />
+              </button>
+
+
+              {/* IMAGE */}
+
+              <div
+                className="lightbox-content"
+                onClick={(e) =>
+                  e.stopPropagation()
+                }
+              >
+
+                <img
+                  src={
+                    selectedCategory.images[
+                      selectedImage
+                    ]
+                  }
+                  alt={`${selectedCategory.title} preview`}
+                />
+
+                <div className="lightbox-caption">
+
+                  {selectedCategory.title}
+
+                </div>
+
+              </div>
+
+
+              {/* NEXT */}
+
+              <button
+                type="button"
+                className="lightbox-next"
+                onClick={(e) => {
+
+                  e.stopPropagation();
+
+                  setSelectedImage((prev) =>
+                    prev ===
+                    selectedCategory.images.length - 1
+                      ? 0
+                      : prev + 1
+                  );
+
+                }}
+              >
+                <ChevronRight size={30} />
+              </button>
+
+            </div>
+
+          )}
 
       </div>
     </section>
   );
 }
+
+
+
 
 /* =========================================================
    MEDIA
@@ -1179,6 +1650,63 @@ function WhatsAppButton() {
    APP
 ========================================================= */
 
+// function App() {
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             entry.target.classList.add("show");
+//           }
+//         });
+//       },
+//       {
+//         threshold: 0.1,
+//       }
+//     );
+
+//     const elements = document.querySelectorAll(".reveal");
+
+//     elements.forEach((el) => observer.observe(el));
+
+//     return () => observer.disconnect();
+//   }, []);
+
+//   useEffect(() => {
+//     document.title =
+//       "Trishant Priyavrat | Talent, Arts, Karate & Achievements";
+//   }, []);
+
+//   return (
+//     <>
+//       <Navbar />
+
+//       <main>
+//         <Hero />
+
+//         <Achievements />
+
+//         <RecordsVault />
+
+//         <KarateArena />
+        
+
+//         <TalentsArts />
+
+//         <MediaSection />
+
+//         <Testimonials />
+
+//         <Contact />
+//       </main>
+
+//       <Footer />
+
+//       <WhatsAppButton />
+//     </>
+//   );
+// }
+
 function App() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -1201,11 +1729,6 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    document.title =
-      "Trishant Priyavrat | Talent, Arts, Karate & Achievements";
-  }, []);
-
   return (
     <>
       <Navbar />
@@ -1218,13 +1741,15 @@ function App() {
         <RecordsVault />
 
         <KarateArena />
-        
+<Podcast/>
+<KarateGallery/>
 
         <TalentsArts />
 
         <MediaSection />
 
         <Testimonials />
+        
 
         <Contact />
       </main>
