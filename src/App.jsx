@@ -200,101 +200,7 @@ const gallery = [
     ],
   },
 ];
-// const gallery = [
-//   {
-//     title: "Keyboard",
-//     icon: "🎹",
-//     color: "blue",
-//   },
-//   {
-//     title: "Tabla",
-//     icon: "🥁",
-//     color: "purple",
-//   },
-//   {
-//     title: "Karate",
-//     icon: "🥋",
-//     color: "blue",
-//   },
-//   {
-//     title: "Music",
-//     icon: "🎶",
-//     color: "purple",
-//   },
-//   {
-//     title: "Award",
-//     icon: "🏆",
-//     color: "green",
-//   },
-//   {
-//     title: "Sports",
-//     icon: "🏏",
-//     color: "red",
-//   },
-//   {
-//     title: "IBR",
-//     icon: "📜",
-//     color: "blue",
-//   },
-//   {
-//     title: "GWR",
-//     icon: "🏅",
-//     color: "gold",
-//   },
-// ];
 
-
-
-// const gallery = [
-//   {
-//     title: "Keyboard",
-//     icon: "🎹",
-//     color: "blue",
-//     target: "keyboard-gallery",
-//   },
-//   {
-//     title: "Tabla",
-//     icon: "🥁",
-//     color: "purple",
-//     target: "tabla-gallery",
-//   },
-//   {
-//     title: "Karate",
-//     icon: "🥋",
-//     color: "blue",
-//     target: "karate-gallery",
-//   },
-//   {
-//     title: "Music",
-//     icon: "🎶",
-//     color: "purple",
-//     target: "music-gallery",
-//   },
-//   {
-//     title: "Award",
-//     icon: "🏆",
-//     color: "green",
-//     target: "award-gallery",
-//   },
-//   {
-//     title: "Sports",
-//     icon: "🏏",
-//     color: "red",
-//     target: "sports-gallery",
-//   },
-//   {
-//     title: "IBR",
-//     icon: "📜",
-//     color: "blue",
-//     target: "ibr-gallery",
-//   },
-//   {
-//     title: "GWR",
-//     icon: "🏅",
-//     color: "gold",
-//     target: "gwr-gallery",
-//   },
-// ];
 const testimonials = [
   {
     name: "Performance Community",
@@ -423,19 +329,6 @@ function Navbar() {
   );
 }
 
-/* =========================================================
-   SECTION TITLE
-========================================================= */
-
-// function SectionTitle({ eyebrow, title, text }) {
-//   return (
-//     <div className="section-title reveal">
-//       <span className="eyebrow">{eyebrow}</span>
-//       <h2>{title}</h2>
-//       <p>{text}</p>
-//     </div>
-//   );
-// }
 function SectionTitle({ eyebrow, title, text }) {
   return (
     <div className="section-title">
@@ -608,6 +501,7 @@ function RecordsVault() {
               <div>
                 <span>FEATURED RECORD</span>
                 <h3>Fastest Keyboard Performance</h3>
+            
               </div>
             </div>
 
@@ -682,9 +576,6 @@ function RecordsVault() {
   );
 }
 
-/* =========================================================
-   KARATE
-========================================================= */
 
 function KarateArena() {
   return (
@@ -868,83 +759,6 @@ function KarateGallery() {
   );
 }
 
-/* =========================================================
-   TALENTS
-========================================================= */
-
-// function TalentsArts() {
-//   const handleGalleryClick = (target) => {
-//   const element = document.getElementById(target);
-
-//   if (element) {
-//     element.scrollIntoView({
-//       behavior: "smooth",
-//       block: "start",
-//     });
-//   }
-// };
-//   return (
-//     <section id="talents" className="section talents-section">
-//       <div className="container">
-//         <SectionTitle
-//           eyebrow="🎨 CREATIVITY & PASSION"
-//           title="Talents & Arts"
-//           text="Exploring different forms of creativity, performance and artistic expression."
-//         />
-
-//         <div className="talent-grid">
-//           {talents.map((item, index) => (
-//             <div
-//               className={`talent-card ${item.color} reveal`}
-//               key={index}
-//             >
-//               <div className="talent-icon">{item.icon}</div>
-
-//               <h3>{item.title}</h3>
-
-//               <p>{item.text}</p>
-
-//               <button>
-//                 Explore
-//                 <ArrowRight size={14} />
-//               </button>
-//             </div>
-//           ))}
-//         </div>
-
-//         <div id="gallery" className="gallery-heading reveal">
-//           <span>🎨</span>
-//           <h3>Moments Gallery</h3>
-//         </div>
-        
-//         <div className="gallery-grid">
-//           {gallery.map((item, index) => (
-//   <div
-//     className={`gallery-card ${item.color} reveal`}
-//     key={index}
-//     onClick={() => handleGalleryClick(item.target)}
-//     role="button"
-//     tabIndex={0}
-//   >
-//     <div className="gallery-icon">
-//       {item.icon}
-//     </div>
-
-//     <h3>{item.title}</h3>
-
-//     <span>
-//       View Moments
-//       <ArrowRight size={13} />
-//     </span>
-//   </div>
-// ))}
-//         </div>
-//         <KarateGallery />
-
-//       </div>
-//     </section>
-//   );
-// }
 
 
 function TalentsArts() {
@@ -1279,6 +1093,7 @@ function MediaSection() {
               A journey filled with passion, performance
               and remarkable milestones.
             </p>
+                <img src={Assest.TRISHANT_PRIYAVRAT} alt="Logo" />
           </div>
 
           <div className="media-news-card reveal">
@@ -1288,6 +1103,7 @@ function MediaSection() {
               Featured for outstanding creative and
               performance achievements.
             </p>
+             <img src={Assest.TRISHANT_PRIYAVRAT} alt="Logo" />
           </div>
 
           <div className="media-news-card reveal">
@@ -1297,6 +1113,7 @@ function MediaSection() {
               Sharing an inspiring story of continuous
               growth and determination.
             </p>
+             <img src={Assest.TRISHANT_PRIYAVRAT} alt="Logo" />
           </div>
         </div>
 
@@ -1333,9 +1150,6 @@ function MediaSection() {
   );
 }
 
-/* =========================================================
-   TESTIMONIALS
-========================================================= */
 
 function Testimonials() {
   return (
@@ -1646,66 +1460,6 @@ function WhatsAppButton() {
   );
 }
 
-/* =========================================================
-   APP
-========================================================= */
-
-// function App() {
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             entry.target.classList.add("show");
-//           }
-//         });
-//       },
-//       {
-//         threshold: 0.1,
-//       }
-//     );
-
-//     const elements = document.querySelectorAll(".reveal");
-
-//     elements.forEach((el) => observer.observe(el));
-
-//     return () => observer.disconnect();
-//   }, []);
-
-//   useEffect(() => {
-//     document.title =
-//       "Trishant Priyavrat | Talent, Arts, Karate & Achievements";
-//   }, []);
-
-//   return (
-//     <>
-//       <Navbar />
-
-//       <main>
-//         <Hero />
-
-//         <Achievements />
-
-//         <RecordsVault />
-
-//         <KarateArena />
-        
-
-//         <TalentsArts />
-
-//         <MediaSection />
-
-//         <Testimonials />
-
-//         <Contact />
-//       </main>
-
-//       <Footer />
-
-//       <WhatsAppButton />
-//     </>
-//   );
-// }
 
 function App() {
   useEffect(() => {

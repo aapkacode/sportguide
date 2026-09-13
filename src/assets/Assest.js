@@ -21,8 +21,10 @@ import tabla2 from "../assets/tabla1.png"
 import podcost from "../assets/PODCOST.mp4"
 import video1 from "../assets/VIDEO1.mp4"
 import video2 from "../assets/VIDEO1.mp4"
+import TRISHANT_PRIYAVRAT from "../assets/TRISHANT_PRIYAVRAT.jpeg"
 
 export const Assest = {
+  TRISHANT_PRIYAVRAT,
   Child1,
   Child2,
   Child3,
